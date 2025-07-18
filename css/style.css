@@ -2369,8 +2369,109 @@ footer {
     margin-left: 5px;
 }
 
+/* Mobile Menu Styles */
+.mobile-menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #000;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 280px;
+    height: 100vh;
+    background-color: #fff;
+    z-index: 1001;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    overflow-y: auto;
+}
+
+.mobile-nav.active {
+    right: 0;
+}
+
+.mobile-nav-header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.mobile-nav-close {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #000;
+}
+
+.mobile-nav ul {
+    padding: 20px;
+}
+
+.mobile-nav ul li {
+    margin-bottom: 15px;
+}
+
+.mobile-nav ul li a {
+    display: block;
+    padding: 10px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.mobile-nav-auth {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.mobile-nav-auth a {
+    text-align: center;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: none;
+}
+
+.overlay.active {
+    display: block;
+}
+
 /* Responsive Styles */
 @media (max-width: 992px) {
+    /* Header & Navigation */
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    .desktop-nav {
+        display: none;
+    }
+    
+    .user-actions {
+        display: none;
+    }
+    
+    header .container {
+        padding: 15px;
+        display: flex;
+        align-items: center;
+    }
+    
+    /* Dashboard */
     .dashboard-container {
         flex-direction: column;
     }
@@ -2400,34 +2501,58 @@ footer {
     .dashboard-nav ul li {
         margin-bottom: 0;
     }
+    
+    /* Blog Layout */
+    .blog-layout {
+        flex-direction: column;
+    }
+    
+    .blog-sidebar {
+        margin-top: 30px;
+    }
+    
+    /* Package Content */
+    .package-content {
+        flex-direction: column;
+    }
+    
+    .package-booking {
+        border-left: none;
+        border-top: 1px solid #eee;
+        padding-left: 0;
+        padding-top: 20px;
+        margin-top: 20px;
+    }
+    
+    /* Contact Page */
+    .contact-container {
+        flex-direction: column;
+    }
+    
+    .quote-container {
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 768px) {
-    header .container {
-        flex-direction: column;
-    }
-    
-    .logo {
-        margin-bottom: 15px;
-    }
-    
-    nav ul {
-        margin-bottom: 15px;
-    }
-    
+    /* Hero Section */
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
     
+    /* Form Elements */
     .form-row {
         flex-direction: column;
-        gap: 0;
+        gap: 15px;
     }
     
+    /* Footer */
     .footer-content {
         flex-direction: column;
+        gap: 30px;
     }
     
+    /* Reservations */
     .reservation-content {
         flex-direction: column;
     }
@@ -2435,32 +2560,73 @@ footer {
     .reservation-price {
         text-align: left;
     }
+    
+    /* Insurance Benefits */
+    .insurance-benefits {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Plans Container */
+    .plans-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .plan-card.featured {
+        transform: scale(1);
+        order: -1;
+        margin-bottom: 30px;
+    }
 }
 
 @media (max-width: 576px) {
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
+    /* Typography */
+    h1 {
+        font-size: 1.8rem;
     }
     
-    nav ul li {
-        margin: 5px;
+    h2 {
+        font-size: 1.5rem;
     }
     
-    .hero h1 {
-        font-size: 2rem;
+    /* Hero Section */
+    .hero {
+        padding: 60px 0;
     }
     
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    /* Search Box */
+    .search-box {
+        padding: 20px 15px;
+    }
+    
+    .tabs {
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 10px;
+    }
+    
+    /* Cards & Grids */
+    .offers-grid, .blog-grid, .hotel-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Auth Container */
     .auth-container {
         padding: 20px;
     }
     
+    /* Dashboard */
     .dashboard-header {
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
     }
     
+    /* Reservations */
     .reservation-header, .reservation-actions {
         flex-direction: column;
         gap: 10px;
@@ -2470,5 +2636,20 @@ footer {
         width: 100%;
         text-align: center;
         margin-right: 0;
+    }
+    
+    /* Blog Post */
+    .post-footer {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .post-stats {
+        justify-content: flex-start;
+    }
+    
+    /* FAQ */
+    .faq-question h3 {
+        font-size: 1rem;
     }
 }

@@ -1,4 +1,29 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Mobile Menu Toggle
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const mobileNav = document.querySelector('.mobile-nav');
+    const mobileNavClose = document.querySelector('.mobile-nav-close');
+    const overlay = document.querySelector('.overlay');
+    
+    if (mobileMenuToggle && mobileNav && mobileNavClose && overlay) {
+        mobileMenuToggle.addEventListener('click', function() {
+            mobileNav.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        mobileNavClose.addEventListener('click', function() {
+            mobileNav.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        
+        overlay.addEventListener('click', function() {
+            mobileNav.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    }
     // Slider de preço na página de pacotes
     const priceRange = document.getElementById('price-range');
     const priceValue = document.getElementById('price-value');

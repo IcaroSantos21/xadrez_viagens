@@ -15,7 +15,10 @@
                     <img src="./assets/logo_xadrez.png" alt="Xadrez Viagens">
                 </a>
             </div>
-            <nav>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav class="desktop-nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="pacotes.html">Pacotes</a></li>
@@ -273,6 +276,27 @@
         </div>
     </footer>
 
+    <div class="mobile-nav">
+        <div class="mobile-nav-header">
+            <div class="mobile-nav-close">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="pacotes.html">Pacotes</a></li>
+            <li><a href="hoteis.html">Hotéis</a></li>
+            <li class="active"><a href="seguros.html">Seguros</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contato.html">Contato</a></li>
+            <li class="mobile-nav-auth">
+                <a href="login.html" class="btn-login">Login</a>
+                <a href="cadastro.html" class="btn-cadastro">Cadastrar</a>
+            </li>
+        </ul>
+    </div>
+    <div class="overlay"></div>
+    
     <script src="js/script.js"></script>
 </body>
 </html>
