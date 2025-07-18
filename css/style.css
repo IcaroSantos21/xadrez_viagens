@@ -1,0 +1,1717 @@
+/* Reset e Estilos Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #000;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+button, .btn-search, .btn-offer, .btn-auth, .btn-read-more, .btn-view-all, .btn-details, .btn-cancel, .btn-review, .btn-rebook, .btn-save {
+    cursor: pointer;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    text-align: center;
+}
+
+button:hover, .btn-search:hover, .btn-offer:hover, .btn-auth:hover, .btn-read-more:hover, .btn-view-all:hover, .btn-details:hover, .btn-cancel:hover, .btn-review:hover, .btn-rebook:hover, .btn-save:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #000;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+section {
+    padding: 60px 0;
+}
+
+/* Header */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo {
+    max-width: 150px;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    font-weight: 600;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #000;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+}
+
+.btn-login, .btn-cadastro {
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.btn-login {
+    background-color: transparent;
+    border: 2px solid #000;
+    color: #000;
+}
+
+.btn-cadastro {
+    background-color: #000;
+    color: #fff;
+}
+
+.btn-login:hover, .btn-cadastro:hover {
+    transform: translateY(-2px);
+}
+
+.btn-login.active, .btn-cadastro.active {
+    background-color: #000;
+    color: #fff;
+}
+
+/* User Menu (Logged In) */
+.user-menu {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.user-name {
+    margin-right: 10px;
+    font-weight: 600;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    width: 200px;
+    padding: 10px 0;
+    display: none;
+    z-index: 1000;
+}
+
+.user-menu:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f5f5f5;
+}
+
+.dropdown-menu i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+/* Hero Section */
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.search-box {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.tabs {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.tab {
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #333;
+    border: none;
+    border-bottom: 3px solid transparent;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab.active {
+    color: #000;
+    border-bottom-color: #000;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.btn-search {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* Featured Offers */
+.featured {
+    background-color: #fff;
+}
+
+.offers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.offer-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.offer-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.offer-image {
+    position: relative;
+    height: 200px;
+}
+
+.offer-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.offer-tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #ff3a3a;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+.offer-content {
+    padding: 20px;
+}
+
+.offer-price {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #999;
+    margin-right: 10px;
+}
+
+.current-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #000;
+}
+
+.btn-offer {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-offer:hover {
+    background-color: #333;
+}
+
+/* Testimonials */
+.testimonials {
+    background-color: #f9f9f9;
+}
+
+.testimonials-slider {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.testimonial {
+    flex: 1;
+    min-width: 300px;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.testimonial-content {
+    margin-bottom: 20px;
+}
+
+.testimonial-content p {
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+}
+
+.testimonial-author img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.rating {
+    color: #ffc107;
+    margin-top: 5px;
+}
+
+/* Blog Section */
+.blog {
+    background-color: #fff;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.blog-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-10px);
+}
+
+.blog-image {
+    height: 200px;
+}
+
+.blog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.blog-content {
+    padding: 20px;
+}
+
+.blog-date {
+    display: block;
+    color: #999;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.btn-read-more {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 4px;
+    font-weight: 600;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-read-more:hover {
+    background-color: #333;
+}
+
+.blog-cta {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.btn-view-all {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-view-all:hover {
+    background-color: #333;
+}
+
+/* Footer */
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 60px 0 20px;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.footer-logo, .footer-links, .footer-contact, .footer-social {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-logo img {
+    max-width: 150px;
+    margin-bottom: 15px;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a, .footer-social a {
+    color: #ccc;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover, .footer-social a:hover {
+    color: #fff;
+}
+
+.footer-contact p {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.footer-contact i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: #555;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+}
+
+/* Authentication Pages */
+.auth-section {
+    background-color: #f9f9f9;
+    padding: 60px 0;
+    min-height: calc(100vh - 200px);
+    display: flex;
+    align-items: center;
+}
+
+.auth-container {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 40px;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.auth-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.remember-me, .terms {
+    display: flex;
+    align-items: center;
+}
+
+.remember-me input, .terms input {
+    width: auto;
+    margin-right: 5px;
+}
+
+.forgot-password {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.btn-auth {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+}
+
+.auth-separator {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.auth-separator::before, .auth-separator::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background-color: #ddd;
+}
+
+.auth-separator span {
+    padding: 0 10px;
+    color: #999;
+}
+
+.social-login {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.btn-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-google {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.btn-facebook {
+    background-color: #3b5998;
+    color: #fff;
+}
+
+.btn-google:hover {
+    background-color: #f5f5f5;
+}
+
+.btn-facebook:hover {
+    background-color: #2d4373;
+}
+
+.btn-social i {
+    margin-right: 10px;
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.auth-footer a {
+    color: #000;
+    font-weight: 600;
+}
+
+/* Dashboard */
+.dashboard {
+    background-color: #f9f9f9;
+    padding: 40px 0;
+    min-height: calc(100vh - 200px);
+}
+
+.dashboard-container {
+    display: flex;
+    gap: 30px;
+}
+
+.dashboard-sidebar {
+    width: 280px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+}
+
+.user-profile {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.user-avatar-large {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.dashboard-nav ul li {
+    margin-bottom: 10px;
+}
+
+.dashboard-nav ul li a {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.dashboard-nav ul li.active a {
+    background-color: #f0f0f0;
+    font-weight: 600;
+}
+
+.dashboard-nav ul li a:hover {
+    background-color: #f0f0f0;
+}
+
+.dashboard-nav ul li a i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+.dashboard-content {
+    flex: 1;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.dashboard-header h2 {
+    margin-bottom: 0;
+    text-align: left;
+}
+
+.dashboard-filters select {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.dashboard-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.btn-save {
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-save:hover {
+    background-color: #333;
+}
+
+/* Reservations */
+.reservations {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.reservation-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.reservation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #eee;
+}
+
+.reservation-type {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+}
+
+.reservation-type i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.reservation-status .status {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.status.confirmed {
+    background-color: #e3f7e3;
+    color: #2e7d32;
+}
+
+.status.completed {
+    background-color: #e8eaf6;
+    color: #3f51b5;
+}
+
+.status.canceled {
+    background-color: #ffebee;
+    color: #c62828;
+}
+
+.reservation-content {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.reservation-destination {
+    flex: 1;
+    min-width: 200px;
+}
+
+.reservation-details {
+    flex: 2;
+    min-width: 300px;
+}
+
+.detail-item {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.detail-item i {
+    margin-right: 15px;
+    font-size: 1.5rem;
+    color: #666;
+    width: 30px;
+    text-align: center;
+}
+
+.detail-item h4 {
+    margin-bottom: 5px;
+}
+
+.detail-item p {
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.reservation-price {
+    flex: 1;
+    min-width: 150px;
+    text-align: right;
+}
+
+.reservation-price p {
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.reservation-price h3 {
+    font-size: 1.8rem;
+    color: #000;
+}
+
+.reservation-actions {
+    display: flex;
+    padding: 15px 20px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #eee;
+}
+
+.btn-details, .btn-cancel, .btn-review, .btn-rebook {
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-weight: 600;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-details {
+    background-color: #000;
+    color: #fff;
+}
+
+.btn-cancel {
+    background-color: #fff;
+    color: #c62828;
+    border: 1px solid #c62828;
+}
+
+.btn-review {
+    background-color: #fff;
+    color: #3f51b5;
+    border: 1px solid #3f51b5;
+}
+
+.btn-rebook {
+    background-color: #fff;
+    color: #2e7d32;
+    border: 1px solid #2e7d32;
+}
+
+.btn-details:hover {
+    background-color: #333;
+}
+
+.btn-cancel:hover {
+    background-color: #ffebee;
+}
+
+.btn-review:hover {
+    background-color: #e8eaf6;
+}
+
+.btn-rebook:hover {
+    background-color: #e3f7e3;
+}
+
+/* Insurance Pages */
+.insurance-hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/insurance-hero.jpg');
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.insurance-intro {
+    background-color: #fff;
+    padding: 60px 0;
+}
+
+.intro-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.intro-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+.insurance-benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 30px;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: flex-start;
+}
+
+.benefit-icon {
+    width: 60px;
+    height: 60px;
+    background-color: #f5f5f5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.benefit-icon i {
+    font-size: 1.5rem;
+    color: #000;
+}
+
+.benefit-content h3 {
+    margin-bottom: 10px;
+}
+
+.benefit-content p {
+    margin-bottom: 0;
+    font-size: 1rem;
+}
+
+.insurance-plans {
+    background-color: #f9f9f9;
+    padding: 60px 0;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: #666;
+}
+
+.plans-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.plan-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 350px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.plan-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.plan-card.featured {
+    border: 2px solid #000;
+    transform: scale(1.05);
+}
+
+.plan-tag {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background-color: #000;
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.plan-header {
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+.plan-header h3 {
+    margin-bottom: 15px;
+}
+
+.plan-price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+}
+
+.plan-price .price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #000;
+}
+
+.plan-price .period {
+    font-size: 1rem;
+    color: #666;
+    margin-left: 5px;
+}
+
+.plan-features {
+    padding: 30px 20px;
+}
+
+.plan-features ul {
+    list-style: none;
+}
+
+.plan-features ul li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.plan-features ul li i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+.plan-features ul li i.fa-check {
+    color: #2e7d32;
+}
+
+.plan-features ul li i.fa-times {
+    color: #c62828;
+}
+
+.plan-footer {
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+
+.btn-select-plan {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-select-plan:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+}
+
+.insurance-quote {
+    background-color: #fff;
+    padding: 60px 0;
+}
+
+.quote-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+}
+
+.quote-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.quote-content h2 {
+    text-align: left;
+}
+
+.quote-form {
+    flex: 1;
+    min-width: 400px;
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.btn-quote {
+    width: 100%;
+    padding: 12px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-quote:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+}
+
+/* Hotel Hero Section */
+.hotel-hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/hotel-hero.jpg');
+}
+
+/* Hotel List */
+.hotel-list {
+    background-color: #f9f9f9;
+    padding: 60px 0;
+}
+
+.hotel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.hotel-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hotel-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.hotel-image {
+    position: relative;
+    height: 200px;
+}
+
+.hotel-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hotel-rating {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffc107;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.hotel-content {
+    padding: 20px;
+}
+
+.hotel-location {
+    color: #666;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.hotel-location i {
+    margin-right: 5px;
+}
+
+.hotel-amenities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.hotel-amenities span {
+    background-color: #f5f5f5;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: #666;
+    display: flex;
+    align-items: center;
+}
+
+.hotel-amenities span i {
+    margin-right: 5px;
+}
+
+.hotel-price {
+    margin-bottom: 15px;
+}
+
+.hotel-price p {
+    margin-bottom: 5px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.hotel-price h4 {
+    font-size: 1.5rem;
+    color: #000;
+    margin-bottom: 0;
+}
+
+.hotel-price h4 span {
+    font-size: 1rem;
+    color: #666;
+}
+
+.btn-view-hotel {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-view-hotel:hover {
+    background-color: #333;
+}
+
+/* Search Results Page */
+.search-results {
+    background-color: #f9f9f9;
+    padding: 40px 0;
+}
+
+.search-filters {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.filters-form .btn-search {
+    width: 100%;
+}
+
+.results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.results-count p {
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.results-sort {
+    display: flex;
+    align-items: center;
+}
+
+.results-sort label {
+    margin-right: 10px;
+    margin-bottom: 0;
+}
+
+.results-sort select {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    width: auto;
+}
+
+.flight-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.flight-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.flight-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.flight-card.best-offer {
+    border: 2px solid #000;
+}
+
+.offer-tag {
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    background-color: #000;
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.flight-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.airline {
+    display: flex;
+    align-items: center;
+}
+
+.airline img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    margin-right: 10px;
+}
+
+.airline span {
+    font-weight: 600;
+}
+
+.flight-price {
+    text-align: right;
+}
+
+.flight-price h3 {
+    margin-bottom: 0;
+    color: #000;
+}
+
+.flight-price p {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.flight-details {
+    margin-bottom: 20px;
+}
+
+.flight-route {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.departure, .arrival {
+    text-align: center;
+}
+
+.departure h4, .arrival h4 {
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+.departure p, .arrival p {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.flight-duration {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    margin: 0 20px;
+}
+
+.duration-line {
+    flex: 1;
+    height: 2px;
+    background-color: #ddd;
+}
+
+.duration-time {
+    padding: 5px 10px;
+    background-color: #f5f5f5;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 0 10px;
+    white-space: nowrap;
+}
+
+.flight-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flight-info p {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.flight-info i {
+    margin-right: 5px;
+}
+
+.flight-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-details, .btn-select {
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-details {
+    background-color: transparent;
+    border: 1px solid #000;
+    color: #000;
+}
+
+.btn-select {
+    background-color: #000;
+    color: #fff;
+}
+
+.btn-details:hover {
+    background-color: #f5f5f5;
+}
+
+.btn-select:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.pagination a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.pagination a.active {
+    background-color: #000;
+    color: #fff;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #f0f0f0;
+}
+
+.pagination a.next {
+    width: auto;
+    padding: 0 15px;
+}
+
+.pagination a.next i {
+    margin-left: 5px;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+    
+    .dashboard-sidebar {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    .user-profile {
+        display: flex;
+        align-items: center;
+        text-align: left;
+    }
+    
+    .user-avatar-large {
+        margin-right: 20px;
+        margin-bottom: 0;
+    }
+    
+    .dashboard-nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .dashboard-nav ul li {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+    }
+    
+    .logo {
+        margin-bottom: 15px;
+    }
+    
+    nav ul {
+        margin-bottom: 15px;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+    }
+    
+    .reservation-content {
+        flex-direction: column;
+    }
+    
+    .reservation-price {
+        text-align: left;
+    }
+}
+
+@media (max-width: 576px) {
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    nav ul li {
+        margin: 5px;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .auth-container {
+        padding: 20px;
+    }
+    
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .reservation-header, .reservation-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .btn-details, .btn-cancel, .btn-review, .btn-rebook {
+        width: 100%;
+        text-align: center;
+        margin-right: 0;
+    }
+}

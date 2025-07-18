@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Reservas - Xadrez Viagens</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo-placeholder.png" alt="Xadrez Viagens">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="pacotes.html">Pacotes</a></li>
+                    <li><a href="hoteis.html">Hotéis</a></li>
+                    <li><a href="seguros.html">Seguros</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions logged-in">
+                <div class="user-menu">
+                    <span class="user-name">Olá, João</span>
+                    <img src="images/user-avatar.jpg" alt="Avatar" class="user-avatar">
+                    <div class="dropdown-menu">
+                        <a href="painel.html"><i class="fas fa-user"></i> Meu Perfil</a>
+                        <a href="reservas.html"><i class="fas fa-ticket-alt"></i> Minhas Reservas</a>
+                        <a href="favoritos.html"><i class="fas fa-heart"></i> Favoritos</a>
+                        <a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> Sair</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="dashboard">
+        <div class="container">
+            <div class="dashboard-container">
+                <div class="dashboard-sidebar">
+                    <div class="user-profile">
+                        <img src="images/user-avatar.jpg" alt="Avatar" class="user-avatar-large">
+                        <h3>João Silva</h3>
+                        <p>joao.silva@email.com</p>
+                    </div>
+                    <nav class="dashboard-nav">
+                        <ul>
+                            <li><a href="painel.html"><i class="fas fa-user"></i> Meu Perfil</a></li>
+                            <li class="active"><a href="reservas.html"><i class="fas fa-ticket-alt"></i> Minhas Reservas</a></li>
+                            <li><a href="favoritos.html"><i class="fas fa-heart"></i> Favoritos</a></li>
+                            <li><a href="#"><i class="fas fa-cog"></i> Configurações</a></li>
+                            <li><a href="#" id="sidebar-logout"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="dashboard-content">
+                    <div class="dashboard-header">
+                        <h2>Minhas Reservas</h2>
+                        <div class="dashboard-filters">
+                            <select id="filter-reservas">
+                                <option value="todas">Todas as Reservas</option>
+                                <option value="ativas">Reservas Ativas</option>
+                                <option value="passadas">Reservas Passadas</option>
+                                <option value="canceladas">Reservas Canceladas</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="reservations">
+                        <div class="reservation-card active">
+                            <div class="reservation-header">
+                                <div class="reservation-type">
+                                    <i class="fas fa-plane"></i>
+                                    <span>Voo + Hotel</span>
+                                </div>
+                                <div class="reservation-status">
+                                    <span class="status confirmed">Confirmado</span>
+                                </div>
+                            </div>
+                            <div class="reservation-content">
+                                <div class="reservation-destination">
+                                    <h3>Rio de Janeiro</h3>
+                                    <p>15 Jul 2023 - 22 Jul 2023</p>
+                                </div>
+                                <div class="reservation-details">
+                                    <div class="detail-item">
+                                        <i class="fas fa-plane-departure"></i>
+                                        <div>
+                                            <h4>Voo de Ida</h4>
+                                            <p>15 Jul 2023 - 08:30</p>
+                                            <p>São Paulo (GRU) → Rio de Janeiro (SDU)</p>
+                                        </div>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fas fa-plane-arrival"></i>
+                                        <div>
+                                            <h4>Voo de Volta</h4>
+                                            <p>22 Jul 2023 - 19:45</p>
+                                            <p>Rio de Janeiro (SDU) → São Paulo (GRU)</p>
+                                        </div>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fas fa-hotel"></i>
+                                        <div>
+                                            <h4>Hotel</h4>
+                                            <p>Copacabana Palace</p>
+                                            <p>Quarto Luxo - 2 Adultos</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="reservation-price">
+                                    <p>Valor Total</p>
+                                    <h3>R$ 4.500,00</h3>
+                                </div>
+                            </div>
+                            <div class="reservation-actions">
+                                <a href="#" class="btn-details">Ver Detalhes</a>
+                                <a href="#" class="btn-cancel">Cancelar Reserva</a>
+                            </div>
+                        </div>
+
+                        <div class="reservation-card past">
+                            <div class="reservation-header">
+                                <div class="reservation-type">
+                                    <i class="fas fa-hotel"></i>
+                                    <span>Hotel</span>
+                                </div>
+                                <div class="reservation-status">
+                                    <span class="status completed">Concluído</span>
+                                </div>
+                            </div>
+                            <div class="reservation-content">
+                                <div class="reservation-destination">
+                                    <h3>Gramado</h3>
+                                    <p>10 Mar 2023 - 15 Mar 2023</p>
+                                </div>
+                                <div class="reservation-details">
+                                    <div class="detail-item">
+                                        <i class="fas fa-hotel"></i>
+                                        <div>
+                                            <h4>Hotel</h4>
+                                            <p>Hotel Alpestre</p>
+                                            <p>Quarto Standard - 2 Adultos</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="reservation-price">
+                                    <p>Valor Total</p>
+                                    <h3>R$ 2.800,00</h3>
+                                </div>
+                            </div>
+                            <div class="reservation-actions">
+                                <a href="#" class="btn-details">Ver Detalhes</a>
+                                <a href="#" class="btn-review">Avaliar</a>
+                            </div>
+                        </div>
+
+                        <div class="reservation-card canceled">
+                            <div class="reservation-header">
+                                <div class="reservation-type">
+                                    <i class="fas fa-plane"></i>
+                                    <span>Voo</span>
+                                </div>
+                                <div class="reservation-status">
+                                    <span class="status canceled">Cancelado</span>
+                                </div>
+                            </div>
+                            <div class="reservation-content">
+                                <div class="reservation-destination">
+                                    <h3>Salvador</h3>
+                                    <p>05 Jun 2023 - 12 Jun 2023</p>
+                                </div>
+                                <div class="reservation-details">
+                                    <div class="detail-item">
+                                        <i class="fas fa-plane-departure"></i>
+                                        <div>
+                                            <h4>Voo de Ida</h4>
+                                            <p>05 Jun 2023 - 10:15</p>
+                                            <p>São Paulo (GRU) → Salvador (SSA)</p>
+                                        </div>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fas fa-plane-arrival"></i>
+                                        <div>
+                                            <h4>Voo de Volta</h4>
+                                            <p>12 Jun 2023 - 15:30</p>
+                                            <p>Salvador (SSA) → São Paulo (GRU)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="reservation-price">
+                                    <p>Valor Total</p>
+                                    <h3>R$ 1.800,00</h3>
+                                </div>
+                            </div>
+                            <div class="reservation-actions">
+                                <a href="#" class="btn-details">Ver Detalhes</a>
+                                <a href="#" class="btn-rebook">Reservar Novamente</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo-placeholder.png" alt="Xadrez Viagens">
+                    <p>Sua viagem dos sonhos começa aqui.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pacotes.html">Pacotes</a></li>
+                        <li><a href="hoteis.html">Hotéis</a></li>
+                        <li><a href="seguros.html">Seguros</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contato</h4>
+                    <p><i class="fas fa-phone"></i> (11) 9999-9999</p>
+                    <p><i class="fas fa-envelope"></i> contato@xadrezviagens.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Av. Paulista, 1000 - São Paulo</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Xadrez Viagens. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

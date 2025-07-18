@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Cliente - Xadrez Viagens</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo-placeholder.png" alt="Xadrez Viagens">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="pacotes.html">Pacotes</a></li>
+                    <li><a href="hoteis.html">Hotéis</a></li>
+                    <li><a href="seguros.html">Seguros</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions logged-in">
+                <div class="user-menu">
+                    <span class="user-name">Olá, João</span>
+                    <img src="images/user-avatar.jpg" alt="Avatar" class="user-avatar">
+                    <div class="dropdown-menu">
+                        <a href="painel.html"><i class="fas fa-user"></i> Meu Perfil</a>
+                        <a href="reservas.html"><i class="fas fa-ticket-alt"></i> Minhas Reservas</a>
+                        <a href="favoritos.html"><i class="fas fa-heart"></i> Favoritos</a>
+                        <a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> Sair</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="dashboard">
+        <div class="container">
+            <div class="dashboard-container">
+                <div class="dashboard-sidebar">
+                    <div class="user-profile">
+                        <img src="images/user-avatar.jpg" alt="Avatar" class="user-avatar-large">
+                        <h3>João Silva</h3>
+                        <p>joao.silva@email.com</p>
+                    </div>
+                    <nav class="dashboard-nav">
+                        <ul>
+                            <li class="active"><a href="painel.html"><i class="fas fa-user"></i> Meu Perfil</a></li>
+                            <li><a href="reservas.html"><i class="fas fa-ticket-alt"></i> Minhas Reservas</a></li>
+                            <li><a href="favoritos.html"><i class="fas fa-heart"></i> Favoritos</a></li>
+                            <li><a href="#"><i class="fas fa-cog"></i> Configurações</a></li>
+                            <li><a href="#" id="sidebar-logout"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="dashboard-content">
+                    <div class="dashboard-header">
+                        <h2>Meu Perfil</h2>
+                    </div>
+                    <div class="dashboard-card">
+                        <h3>Informações Pessoais</h3>
+                        <form id="profile-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="profile-nome">Nome</label>
+                                    <input type="text" id="profile-nome" value="João">
+                                </div>
+                                <div class="form-group">
+                                    <label for="profile-sobrenome">Sobrenome</label>
+                                    <input type="text" id="profile-sobrenome" value="Silva">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="profile-email">E-mail</label>
+                                    <input type="email" id="profile-email" value="joao.silva@email.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="profile-telefone">Telefone</label>
+                                    <input type="tel" id="profile-telefone" value="(11) 98765-4321">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="profile-cpf">CPF</label>
+                                    <input type="text" id="profile-cpf" value="123.456.789-00">
+                                </div>
+                                <div class="form-group">
+                                    <label for="profile-nascimento">Data de Nascimento</label>
+                                    <input type="date" id="profile-nascimento" value="1990-01-15">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn-save">Salvar Alterações</button>
+                        </form>
+                    </div>
+                    <div class="dashboard-card">
+                        <h3>Endereço</h3>
+                        <form id="address-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="profile-cep">CEP</label>
+                                    <input type="text" id="profile-cep" value="01234-567">
+                                </div>
+                                <div class="form-group">
+                                    <label for="profile-estado">Estado</label>
+                                    <select id="profile-estado">
+                                        <option value="SP" selected>São Paulo</option>
+                                        <option value="RJ">Rio de Janeiro</option>
+                                        <option value="MG">Minas Gerais</option>
+                                        <!-- Outros estados -->
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="profile-cidade">Cidade</label>
+                                    <input type="text" id="profile-cidade" value="São Paulo">
+                                </div>
+                                <div class="form-group">
+                                    <label for="profile-bairro">Bairro</label>
+                                    <input type="text" id="profile-bairro" value="Centro">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="profile-endereco">Endereço</label>
+                                <input type="text" id="profile-endereco" value="Av. Paulista, 1000">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="profile-numero">Número</label>
+                                    <input type="text" id="profile-numero" value="1000">
+                                </div>
+                                <div class="form-group">
+                                    <label for="profile-complemento">Complemento</label>
+                                    <input type="text" id="profile-complemento" value="Apto 123">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn-save">Salvar Alterações</button>
+                        </form>
+                    </div>
+                    <div class="dashboard-card">
+                        <h3>Alterar Senha</h3>
+                        <form id="password-form">
+                            <div class="form-group">
+                                <label for="current-password">Senha Atual</label>
+                                <input type="password" id="current-password">
+                            </div>
+                            <div class="form-group">
+                                <label for="new-password">Nova Senha</label>
+                                <input type="password" id="new-password">
+                            </div>
+                            <div class="form-group">
+                                <label for="confirm-new-password">Confirmar Nova Senha</label>
+                                <input type="password" id="confirm-new-password">
+                            </div>
+                            <button type="submit" class="btn-save">Alterar Senha</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo-placeholder.png" alt="Xadrez Viagens">
+                    <p>Sua viagem dos sonhos começa aqui.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pacotes.html">Pacotes</a></li>
+                        <li><a href="hoteis.html">Hotéis</a></li>
+                        <li><a href="seguros.html">Seguros</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contato</h4>
+                    <p><i class="fas fa-phone"></i> (11) 9999-9999</p>
+                    <p><i class="fas fa-envelope"></i> contato@xadrezviagens.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Av. Paulista, 1000 - São Paulo</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Xadrez Viagens. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

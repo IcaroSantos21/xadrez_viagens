@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca de Voos - Xadrez Viagens</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo-placeholder.png" alt="Xadrez Viagens">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="pacotes.html">Pacotes</a></li>
+                    <li><a href="hoteis.html">Hotéis</a></li>
+                    <li><a href="seguros.html">Seguros</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="login.html" class="btn-login">Login</a>
+                <a href="cadastro.html" class="btn-cadastro">Cadastrar</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="search-results">
+        <div class="container">
+            <div class="search-filters">
+                <h2>Busca de Voos</h2>
+                <form class="filters-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="origem">Origem</label>
+                            <input type="text" id="origem" value="São Paulo (GRU)">
+                        </div>
+                        <div class="form-group">
+                            <label for="destino">Destino</label>
+                            <input type="text" id="destino" value="Rio de Janeiro (SDU)">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="ida">Data de ida</label>
+                            <input type="date" id="ida">
+                        </div>
+                        <div class="form-group">
+                            <label for="volta">Data de volta</label>
+                            <input type="date" id="volta">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="passageiros">Passageiros</label>
+                            <select id="passageiros">
+                                <option value="1">1 Adulto</option>
+                                <option value="2" selected>2 Adultos</option>
+                                <option value="3">3 Adultos</option>
+                                <option value="4">4 Adultos</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="classe">Classe</label>
+                            <select id="classe">
+                                <option value="economica" selected>Econômica</option>
+                                <option value="premium">Premium Economy</option>
+                                <option value="executiva">Executiva</option>
+                                <option value="primeira">Primeira Classe</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-search">Atualizar Busca</button>
+                </form>
+            </div>
+
+            <div class="results-container">
+                <div class="results-header">
+                    <div class="results-count">
+                        <p>15 voos encontrados</p>
+                    </div>
+                    <div class="results-sort">
+                        <label for="sort">Ordenar por:</label>
+                        <select id="sort">
+                            <option value="preco">Menor Preço</option>
+                            <option value="duracao">Menor Duração</option>
+                            <option value="partida">Horário de Partida</option>
+                            <option value="chegada">Horário de Chegada</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="flight-cards">
+                    <!-- Voo 1 -->
+                    <div class="flight-card">
+                        <div class="flight-header">
+                            <div class="airline">
+                                <img src="images/airline1.png" alt="Companhia Aérea">
+                                <span>LATAM Airlines</span>
+                            </div>
+                            <div class="flight-price">
+                                <h3>R$ 450,00</h3>
+                                <p>por pessoa</p>
+                            </div>
+                        </div>
+                        <div class="flight-details">
+                            <div class="flight-route">
+                                <div class="departure">
+                                    <h4>08:30</h4>
+                                    <p>São Paulo (GRU)</p>
+                                </div>
+                                <div class="flight-duration">
+                                    <span class="duration-line"></span>
+                                    <span class="duration-time">1h 15min</span>
+                                    <span class="duration-line"></span>
+                                </div>
+                                <div class="arrival">
+                                    <h4>09:45</h4>
+                                    <p>Rio de Janeiro (SDU)</p>
+                                </div>
+                            </div>
+                            <div class="flight-info">
+                                <p><i class="fas fa-plane"></i> LA3500 • Airbus A320</p>
+                                <p><i class="fas fa-suitcase"></i> Bagagem de mão incluída</p>
+                            </div>
+                        </div>
+                        <div class="flight-actions">
+                            <a href="#" class="btn-details">Ver Detalhes</a>
+                            <a href="#" class="btn-select">Selecionar</a>
+                        </div>
+                    </div>
+
+                    <!-- Voo 2 -->
+                    <div class="flight-card">
+                        <div class="flight-header">
+                            <div class="airline">
+                                <img src="images/airline2.png" alt="Companhia Aérea">
+                                <span>GOL Linhas Aéreas</span>
+                            </div>
+                            <div class="flight-price">
+                                <h3>R$ 380,00</h3>
+                                <p>por pessoa</p>
+                            </div>
+                        </div>
+                        <div class="flight-details">
+                            <div class="flight-route">
+                                <div class="departure">
+                                    <h4>10:15</h4>
+                                    <p>São Paulo (GRU)</p>
+                                </div>
+                                <div class="flight-duration">
+                                    <span class="duration-line"></span>
+                                    <span class="duration-time">1h 20min</span>
+                                    <span class="duration-line"></span>
+                                </div>
+                                <div class="arrival">
+                                    <h4>11:35</h4>
+                                    <p>Rio de Janeiro (SDU)</p>
+                                </div>
+                            </div>
+                            <div class="flight-info">
+                                <p><i class="fas fa-plane"></i> G3 1234 • Boeing 737</p>
+                                <p><i class="fas fa-suitcase"></i> Bagagem de mão incluída</p>
+                            </div>
+                        </div>
+                        <div class="flight-actions">
+                            <a href="#" class="btn-details">Ver Detalhes</a>
+                            <a href="#" class="btn-select">Selecionar</a>
+                        </div>
+                    </div>
+
+                    <!-- Voo 3 -->
+                    <div class="flight-card best-offer">
+                        <div class="offer-tag">Melhor Oferta</div>
+                        <div class="flight-header">
+                            <div class="airline">
+                                <img src="images/airline3.png" alt="Companhia Aérea">
+                                <span>Azul Linhas Aéreas</span>
+                            </div>
+                            <div class="flight-price">
+                                <h3>R$ 320,00</h3>
+                                <p>por pessoa</p>
+                            </div>
+                        </div>
+                        <div class="flight-details">
+                            <div class="flight-route">
+                                <div class="departure">
+                                    <h4>14:45</h4>
+                                    <p>São Paulo (VCP)</p>
+                                </div>
+                                <div class="flight-duration">
+                                    <span class="duration-line"></span>
+                                    <span class="duration-time">1h 10min</span>
+                                    <span class="duration-line"></span>
+                                </div>
+                                <div class="arrival">
+                                    <h4>15:55</h4>
+                                    <p>Rio de Janeiro (SDU)</p>
+                                </div>
+                            </div>
+                            <div class="flight-info">
+                                <p><i class="fas fa-plane"></i> AD 4567 • Embraer E195</p>
+                                <p><i class="fas fa-suitcase"></i> Bagagem de mão incluída</p>
+                            </div>
+                        </div>
+                        <div class="flight-actions">
+                            <a href="#" class="btn-details">Ver Detalhes</a>
+                            <a href="#" class="btn-select">Selecionar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pagination">
+                    <a href="#" class="active">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#" class="next">Próximo <i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo-placeholder.png" alt="Xadrez Viagens">
+                    <p>Sua viagem dos sonhos começa aqui.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pacotes.html">Pacotes</a></li>
+                        <li><a href="hoteis.html">Hotéis</a></li>
+                        <li><a href="seguros.html">Seguros</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contato</h4>
+                    <p><i class="fas fa-phone"></i> (11) 9999-9999</p>
+                    <p><i class="fas fa-envelope"></i> contato@xadrezviagens.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Av. Paulista, 1000 - São Paulo</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Xadrez Viagens. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

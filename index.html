@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xadrez Viagens - Passagens, Pacotes e Hotéis</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo-placeholder.png" alt="Xadrez Viagens">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="pacotes.html">Pacotes</a></li>
+                    <li><a href="hoteis.html">Hotéis</a></li>
+                    <li><a href="seguros.html">Seguros</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="login.html" class="btn-login">Login</a>
+                <a href="cadastro.html" class="btn-cadastro">Cadastrar</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Encontre as melhores ofertas para sua viagem</h1>
+            <div class="search-box">
+                <div class="tabs">
+                    <button class="tab active" data-tab="voos">Voos</button>
+                    <button class="tab" data-tab="pacotes">Pacotes</button>
+                    <button class="tab" data-tab="hoteis">Hotéis</button>
+                </div>
+                <div class="tab-content active" id="voos-tab">
+                    <form>
+                        <div class="form-group">
+                            <label for="origem">Origem</label>
+                            <input type="text" id="origem" placeholder="De onde você vai sair?">
+                        </div>
+                        <div class="form-group">
+                            <label for="destino">Destino</label>
+                            <input type="text" id="destino" placeholder="Para onde você vai?">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="ida">Data de ida</label>
+                                <input type="date" id="ida">
+                            </div>
+                            <div class="form-group">
+                                <label for="volta">Data de volta</label>
+                                <input type="date" id="volta">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="passageiros">Passageiros</label>
+                            <select id="passageiros">
+                                <option value="1">1 Adulto</option>
+                                <option value="2">2 Adultos</option>
+                                <option value="3">3 Adultos</option>
+                                <option value="4">4 Adultos</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn-search">Buscar Voos</button>
+                    </form>
+                </div>
+                <div class="tab-content" id="pacotes-tab">
+                    <form>
+                        <div class="form-group">
+                            <label for="destino-pacote">Destino</label>
+                            <input type="text" id="destino-pacote" placeholder="Para onde você vai?">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="ida-pacote">Data de ida</label>
+                                <input type="date" id="ida-pacote">
+                            </div>
+                            <div class="form-group">
+                                <label for="volta-pacote">Data de volta</label>
+                                <input type="date" id="volta-pacote">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="passageiros-pacote">Passageiros</label>
+                            <select id="passageiros-pacote">
+                                <option value="1">1 Adulto</option>
+                                <option value="2">2 Adultos</option>
+                                <option value="3">3 Adultos</option>
+                                <option value="4">4 Adultos</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn-search">Buscar Pacotes</button>
+                    </form>
+                </div>
+                <div class="tab-content" id="hoteis-tab">
+                    <form>
+                        <div class="form-group">
+                            <label for="destino-hotel">Destino</label>
+                            <input type="text" id="destino-hotel" placeholder="Para onde você vai?">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="checkin">Check-in</label>
+                                <input type="date" id="checkin">
+                            </div>
+                            <div class="form-group">
+                                <label for="checkout">Check-out</label>
+                                <input type="date" id="checkout">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="quartos">Quartos</label>
+                                <select id="quartos">
+                                    <option value="1">1 Quarto</option>
+                                    <option value="2">2 Quartos</option>
+                                    <option value="3">3 Quartos</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="hospedes">Hóspedes</label>
+                                <select id="hospedes">
+                                    <option value="1">1 Adulto</option>
+                                    <option value="2">2 Adultos</option>
+                                    <option value="3">3 Adultos</option>
+                                    <option value="4">4 Adultos</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-search">Buscar Hotéis</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured">
+        <div class="container">
+            <h2>Ofertas em Destaque</h2>
+            <div class="offers-grid">
+                <div class="offer-card">
+                    <div class="offer-image">
+                        <img src="images/destino1.jpg" alt="Rio de Janeiro">
+                        <span class="offer-tag">-30%</span>
+                    </div>
+                    <div class="offer-content">
+                        <h3>Rio de Janeiro</h3>
+                        <p>Pacote completo com passagens, hotel e passeios</p>
+                        <div class="offer-price">
+                            <span class="old-price">R$ 2.500</span>
+                            <span class="current-price">R$ 1.750</span>
+                        </div>
+                        <a href="#" class="btn-offer">Ver Oferta</a>
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-image">
+                        <img src="images/destino2.jpg" alt="Fernando de Noronha">
+                        <span class="offer-tag">-20%</span>
+                    </div>
+                    <div class="offer-content">
+                        <h3>Fernando de Noronha</h3>
+                        <p>Pacote completo com passagens, hotel e passeios</p>
+                        <div class="offer-price">
+                            <span class="old-price">R$ 5.000</span>
+                            <span class="current-price">R$ 4.000</span>
+                        </div>
+                        <a href="#" class="btn-offer">Ver Oferta</a>
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-image">
+                        <img src="images/destino3.jpg" alt="Gramado">
+                        <span class="offer-tag">-25%</span>
+                    </div>
+                    <div class="offer-content">
+                        <h3>Gramado</h3>
+                        <p>Pacote completo com passagens, hotel e passeios</p>
+                        <div class="offer-price">
+                            <span class="old-price">R$ 3.200</span>
+                            <span class="current-price">R$ 2.400</span>
+                        </div>
+                        <a href="#" class="btn-offer">Ver Oferta</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2>Depoimentos</h2>
+            <div class="testimonials-slider">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Viagem incrível! Tudo organizado perfeitamente, desde o voo até o hotel. Recomendo a todos!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/avatar1.jpg" alt="Cliente">
+                        <div>
+                            <h4>Ana Silva</h4>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Preços imbatíveis e atendimento de primeira. Já é a terceira vez que viajo com a Xadrez Viagens!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/avatar2.jpg" alt="Cliente">
+                        <div>
+                            <h4>Carlos Mendes</h4>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="blog">
+        <div class="container">
+            <h2>Blog de Viagens</h2>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="images/blog1.jpg" alt="Dicas de Viagem">
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-date">12 de Maio, 2023</span>
+                        <h3>10 Dicas para Economizar em Viagens Internacionais</h3>
+                        <p>Descubra como planejar sua viagem internacional gastando menos...</p>
+                        <a href="#" class="btn-read-more">Ler mais</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="images/blog2.jpg" alt="Destinos">
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-date">5 de Junho, 2023</span>
+                        <h3>Os 5 Destinos Mais Procurados no Brasil</h3>
+                        <p>Conheça os lugares mais visitados pelos turistas no Brasil...</p>
+                        <a href="#" class="btn-read-more">Ler mais</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="images/blog3.jpg" alt="Gastronomia">
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-date">20 de Junho, 2023</span>
+                        <h3>Gastronomia Mundial: O que Provar em Cada País</h3>
+                        <p>Um guia completo dos pratos típicos que você precisa experimentar...</p>
+                        <a href="#" class="btn-read-more">Ler mais</a>
+                    </div>
+                </div>
+            </div>
+            <div class="blog-cta">
+                <a href="blog.html" class="btn-view-all">Ver Todos os Artigos</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo-placeholder.png" alt="Xadrez Viagens">
+                    <p>Sua viagem dos sonhos começa aqui.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pacotes.html">Pacotes</a></li>
+                        <li><a href="hoteis.html">Hotéis</a></li>
+                        <li><a href="seguros.html">Seguros</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contato</h4>
+                    <p><i class="fas fa-phone"></i> (11) 9999-9999</p>
+                    <p><i class="fas fa-envelope"></i> contato@xadrezviagens.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Av. Paulista, 1000 - São Paulo</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Xadrez Viagens. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
