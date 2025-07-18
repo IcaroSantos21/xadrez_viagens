@@ -32,6 +32,28 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Sua mensagem foi enviada com sucesso! Entraremos em contato em breve.');
             contactForm.reset();
         });
+    }
+    
+    // Newsletter no blog
+    const newsletterForm = document.querySelector('.newsletter-form');
+    
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Obrigado por se inscrever em nossa newsletter!');
+            newsletterForm.reset();
+        });
+    }
+    
+    // Busca no blog
+    const searchForm = document.querySelector('.search-form');
+    
+    if (searchForm) {
+        searchForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Funcionalidade de busca em desenvolvimento.');
+        });
+    }
     
     // Tabs de busca na página inicial
     const tabs = document.querySelectorAll('.tab');

@@ -47,6 +47,7 @@ xadrez_viagens/
 ├── seguros.html           # Seguros de viagem
 ├── pacotes.html           # Pacotes de viagem
 ├── contato.html           # Página de contato
+├── blog.html              # Blog de viagens
 └── README.md              # Documentação do projeto
 ```
 
