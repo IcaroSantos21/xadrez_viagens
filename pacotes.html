@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacotes de Viagem - Xadrez Viagens</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo-placeholder.png" alt="Xadrez Viagens">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active"><a href="pacotes.html">Pacotes</a></li>
+                    <li><a href="hoteis.html">Hotéis</a></li>
+                    <li><a href="seguros.html">Seguros</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="login.html" class="btn-login">Login</a>
+                <a href="cadastro.html" class="btn-cadastro">Cadastrar</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero packages-hero">
+        <div class="container">
+            <h1>Pacotes de Viagem</h1>
+            <p class="hero-subtitle">Experiências completas pelos melhores preços</p>
+            <div class="search-box">
+                <form>
+                    <div class="form-group">
+                        <label for="destino-pacote">Destino</label>
+                        <input type="text" id="destino-pacote" placeholder="Para onde você quer ir?">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="data-ida">Data de ida</label>
+                            <input type="date" id="data-ida">
+                        </div>
+                        <div class="form-group">
+                            <label for="data-volta">Data de volta</label>
+                            <input type="date" id="data-volta">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="adultos">Adultos</label>
+                            <select id="adultos">
+                                <option value="1">1 Adulto</option>
+                                <option value="2" selected>2 Adultos</option>
+                                <option value="3">3 Adultos</option>
+                                <option value="4">4 Adultos</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="criancas">Crianças</label>
+                            <select id="criancas">
+                                <option value="0" selected>0 Crianças</option>
+                                <option value="1">1 Criança</option>
+                                <option value="2">2 Crianças</option>
+                                <option value="3">3 Crianças</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-search">Buscar Pacotes</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="packages-filter">
+        <div class="container">
+            <div class="filter-container">
+                <div class="filter-header">
+                    <h3>Filtros</h3>
+                    <button class="btn-clear-filters">Limpar Filtros</button>
+                </div>
+                <div class="filter-group">
+                    <h4>Preço</h4>
+                    <div class="price-range">
+                        <input type="range" min="500" max="10000" value="5000" class="slider" id="price-range">
+                        <div class="price-values">
+                            <span>R$ 500</span>
+                            <span id="price-value">R$ 5.000</span>
+                            <span>R$ 10.000</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <h4>Duração</h4>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox"> Até 3 dias</label>
+                        <label><input type="checkbox" checked> 4 a 7 dias</label>
+                        <label><input type="checkbox"> 8 a 14 dias</label>
+                        <label><input type="checkbox"> 15 dias ou mais</label>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <h4>Tipo de Pacote</h4>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" checked> Voo + Hotel</label>
+                        <label><input type="checkbox"> Voo + Hotel + Carro</label>
+                        <label><input type="checkbox"> Hotel + Passeios</label>
+                        <label><input type="checkbox"> Cruzeiros</label>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <h4>Refeições Inclusas</h4>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox"> Café da manhã</label>
+                        <label><input type="checkbox"> Meia pensão</label>
+                        <label><input type="checkbox"> Pensão completa</label>
+                        <label><input type="checkbox"> All inclusive</label>
+                    </div>
+                </div>
+            </div>
+            <div class="packages-list">
+                <div class="packages-header">
+                    <h2>Pacotes em Destaque</h2>
+                    <div class="sort-options">
+                        <label for="sort-packages">Ordenar por:</label>
+                        <select id="sort-packages">
+                            <option value="recommended">Recomendados</option>
+                            <option value="price-low">Menor Preço</option>
+                            <option value="price-high">Maior Preço</option>
+                            <option value="duration">Duração</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Pacote 1 -->
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="images/rio.jpg" alt="Rio de Janeiro">
+                        <div class="package-tag">Mais Vendido</div>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-info">
+                            <h3>Rio de Janeiro - Pacote Completo</h3>
+                            <p class="package-location"><i class="fas fa-map-marker-alt"></i> Rio de Janeiro, Brasil</p>
+                            <div class="package-features">
+                                <span><i class="fas fa-plane"></i> Voo Direto</span>
+                                <span><i class="fas fa-hotel"></i> Hotel 4 estrelas</span>
+                                <span><i class="fas fa-utensils"></i> Café da manhã</span>
+                                <span><i class="fas fa-car"></i> Traslado</span>
+                            </div>
+                            <div class="package-description">
+                                <p>Pacote completo para o Rio de Janeiro com passagens aéreas, hospedagem em hotel 4 estrelas, café da manhã e traslado. Aproveite as praias e pontos turísticos da Cidade Maravilhosa.</p>
+                            </div>
+                        </div>
+                        <div class="package-booking">
+                            <div class="package-duration">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>5 dias / 4 noites</span>
+                            </div>
+                            <div class="package-price">
+                                <p>A partir de</p>
+                                <h4>R$ 2.499<span>/pessoa</span></h4>
+                                <p class="price-installment">ou 10x de R$ 249,90</p>
+                            </div>
+                            <a href="#" class="btn-view-package">Ver Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pacote 2 -->
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="images/gramado.jpg" alt="Gramado">
+                        <div class="package-tag discount">-20%</div>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-info">
+                            <h3>Gramado e Canela - Pacote Romântico</h3>
+                            <p class="package-location"><i class="fas fa-map-marker-alt"></i> Gramado, Rio Grande do Sul</p>
+                            <div class="package-features">
+                                <span><i class="fas fa-plane"></i> Voo Direto</span>
+                                <span><i class="fas fa-hotel"></i> Hotel Boutique</span>
+                                <span><i class="fas fa-utensils"></i> Café da manhã</span>
+                                <span><i class="fas fa-glass-cheers"></i> Jantar romântico</span>
+                            </div>
+                            <div class="package-description">
+                                <p>Pacote romântico para Gramado e Canela com passagens aéreas, hospedagem em hotel boutique, café da manhã e jantar romântico. Ideal para casais em lua de mel ou comemorando datas especiais.</p>
+                            </div>
+                        </div>
+                        <div class="package-booking">
+                            <div class="package-duration">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>4 dias / 3 noites</span>
+                            </div>
+                            <div class="package-price">
+                                <p>A partir de</p>
+                                <h4>R$ 1.899<span>/pessoa</span></h4>
+                                <p class="price-installment">ou 10x de R$ 189,90</p>
+                            </div>
+                            <a href="#" class="btn-view-package">Ver Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pacote 3 -->
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="images/maceio.jpg" alt="Maceió">
+                    </div>
+                    <div class="package-content">
+                        <div class="package-info">
+                            <h3>Maceió - Praias Paradisíacas</h3>
+                            <p class="package-location"><i class="fas fa-map-marker-alt"></i> Maceió, Alagoas</p>
+                            <div class="package-features">
+                                <span><i class="fas fa-plane"></i> Voo Direto</span>
+                                <span><i class="fas fa-hotel"></i> Resort All Inclusive</span>
+                                <span><i class="fas fa-umbrella-beach"></i> Praia privativa</span>
+                                <span><i class="fas fa-ship"></i> Passeio de barco</span>
+                            </div>
+                            <div class="package-description">
+                                <p>Pacote para Maceió com passagens aéreas, hospedagem em resort all inclusive com praia privativa e passeio de barco pelas piscinas naturais. Desfrute das águas cristalinas e da culinária local.</p>
+                            </div>
+                        </div>
+                        <div class="package-booking">
+                            <div class="package-duration">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>7 dias / 6 noites</span>
+                            </div>
+                            <div class="package-price">
+                                <p>A partir de</p>
+                                <h4>R$ 3.299<span>/pessoa</span></h4>
+                                <p class="price-installment">ou 10x de R$ 329,90</p>
+                            </div>
+                            <a href="#" class="btn-view-package">Ver Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pacote 4 -->
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="images/foz.jpg" alt="Foz do Iguaçu">
+                    </div>
+                    <div class="package-content">
+                        <div class="package-info">
+                            <h3>Foz do Iguaçu - Maravilhas Naturais</h3>
+                            <p class="package-location"><i class="fas fa-map-marker-alt"></i> Foz do Iguaçu, Paraná</p>
+                            <div class="package-features">
+                                <span><i class="fas fa-plane"></i> Voo Direto</span>
+                                <span><i class="fas fa-hotel"></i> Hotel 5 estrelas</span>
+                                <span><i class="fas fa-utensils"></i> Meia pensão</span>
+                                <span><i class="fas fa-ticket-alt"></i> Ingressos inclusos</span>
+                            </div>
+                            <div class="package-description">
+                                <p>Pacote para Foz do Iguaçu com passagens aéreas, hospedagem em hotel 5 estrelas, meia pensão e ingressos para as Cataratas do Iguaçu e Parque das Aves. Conheça uma das 7 maravilhas naturais do mundo.</p>
+                            </div>
+                        </div>
+                        <div class="package-booking">
+                            <div class="package-duration">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>4 dias / 3 noites</span>
+                            </div>
+                            <div class="package-price">
+                                <p>A partir de</p>
+                                <h4>R$ 2.199<span>/pessoa</span></h4>
+                                <p class="price-installment">ou 10x de R$ 219,90</p>
+                            </div>
+                            <a href="#" class="btn-view-package">Ver Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Pacotes Personalizados</h2>
+                <p>Não encontrou o pacote ideal? Entre em contato conosco e criaremos uma experiência personalizada para você.</p>
+                <a href="contato.html" class="btn-cta">Solicitar Orçamento</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo-placeholder.png" alt="Xadrez Viagens">
+                    <p>Sua viagem dos sonhos começa aqui.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pacotes.html">Pacotes</a></li>
+                        <li><a href="hoteis.html">Hotéis</a></li>
+                        <li><a href="seguros.html">Seguros</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contato</h4>
+                    <p><i class="fas fa-phone"></i> (11) 9999-9999</p>
+                    <p><i class="fas fa-envelope"></i> contato@xadrezviagens.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Av. Paulista, 1000 - São Paulo</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Xadrez Viagens. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
