@@ -1,4 +1,38 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Slider de preço na página de pacotes
+    const priceRange = document.getElementById('price-range');
+    const priceValue = document.getElementById('price-value');
+    
+    if (priceRange && priceValue) {
+        priceRange.addEventListener('input', function() {
+            const value = this.value;
+            priceValue.textContent = `R$ ${Number(value).toLocaleString('pt-BR')}`;
+        });
+    }
+    
+    // FAQ na página de contato
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    if (faqItems.length > 0) {
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+    }
+    
+    // Formulário de contato
+    const contactForm = document.getElementById('contact-form');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Sua mensagem foi enviada com sucesso! Entraremos em contato em breve.');
+            contactForm.reset();
+        });
+    
     // Tabs de busca na página inicial
     const tabs = document.querySelectorAll('.tab');
     const tabContents = document.querySelectorAll('.tab-content');

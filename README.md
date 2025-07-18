@@ -45,6 +45,8 @@ xadrez_viagens/
 ├── voos.html              # Busca de voos
 ├── hoteis.html            # Busca de hotéis
 ├── seguros.html           # Seguros de viagem
+├── pacotes.html           # Pacotes de viagem
+├── contato.html           # Página de contato
 └── README.md              # Documentação do projeto
 ```
 
@@ -82,6 +84,16 @@ xadrez_viagens/
 8. **Seguros (seguros.html)**
    - Planos de seguro
    - Cotação personalizada
+
+9. **Pacotes (pacotes.html)**
+   - Listagem de pacotes de viagem
+   - Filtros e opções de ordenação
+   - Detalhes dos pacotes
+
+10. **Contato (contato.html)**
+    - Formulário de contato
+    - Informações de contato
+    - Perguntas frequentes (FAQ)
 
 ## Como Executar
 
