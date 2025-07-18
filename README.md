@@ -34,8 +34,8 @@ xadrez_viagens/
 ├── js/
 │   └── script.js          # Funcionalidades JavaScript
 │
-├── images/
-│   └── logo-placeholder.png # Logo do site
+├── assets/
+│   └──logo_xadrez.png # Logo do site
 │
 ├── index.html             # Página inicial
 ├── login.html             # Página de login
